@@ -6,6 +6,7 @@ py-kms is a port of node-kms by [markedsword](http://forums.mydigitallife.info/m
 - Supports activating all versions after Windows Vista / 2008 and Office 2010.
 - If you do want to activate a new version with correct csvlk (not necessary unless you want to pretend an official server), generate a new KmsDataBase.xml using License Manager by Hotbird64 and replace the one in this repo.
 - It's written in Python.
+- Can be set to start on boot for network devices running OpenWRT
 
 # Dependencies
 - Python 2.6 or higher, micropython v1.9 or higher.
@@ -16,6 +17,8 @@ py-kms is a port of node-kms by [markedsword](http://forums.mydigitallife.info/m
 - To start the server, execute `python server.py [listen_address] [port]`. The default listening address is `0.0.0.0` (all interfaces) and the default port is `1688`.
 - To run the client, use `python client.py server_address [port]`. The default port is `1688`.
 - To run on ipv6, please use a valid ipv6 address, for example `::` for broadcast.
+- To make py-kms start on boot on the LAN interface of an OpenWRT device, run ./install.sh
+
 
 # Micropython support (unix port only)
 - Micropython v1.9 is necessary since large int support starts here.

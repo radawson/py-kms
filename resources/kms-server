@@ -1,0 +1,28 @@
+#!/bin/bash /etc/rc.common
+# Script to start py-kms automatically on OpenWRT
+# Ensure you cloned py-kms into ~/ or change the path
+
+START=20
+STOP=30
+
+start()	{
+	sleep 5 # ensure the boot process is complete
+	. /etc/profile
+	HOST_IP=$(ip a s br-lan | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}/24\b")
+	HOST_IP=${HOST_IP%???}
+	python ~/py-kms/server.py $HOST_IP 1688 &
+	echo "Python KMS server started on "$HOST_IP":1688"
+}
+
+stop()	{
+	PID=$(ps | grep '[p]ython /root/py-kms/server.py' | awk '{ print $1 }')
+	echo "Found process with ID "$PID
+	kill $PID
+	sleep 2
+	echo "Python KMS server (PID"$PID") stopped"
+}
+
+restart()	{
+	stop
+	start
+}
