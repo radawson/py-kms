@@ -12,3 +12,6 @@ echo -e "\nTo start the server manually, type '/etc/init.d/kms-server start'"
 echo -e "\nTo stop the server, type '/etc/init.d/kms-server stop'"
 echo -e "\nTo restart the server, type '/etc/init.d/kms-server restart'"
 echo -e "\n\nProblems? https://github.com/radawson/py-kms/issues"
+echo -e "\n\nStarting KMS server now"
+
+sh /etc/init.d/kms-server start
