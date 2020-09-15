@@ -2,9 +2,9 @@
 # Installs py-kms as a service on OpenWRT devices
 # Run as root
 
-cp /resources/kms-server /etc/init.d/kms-server
+cp ./resources/kms-server /etc/init.d/kms-server
 chmod +x /etc/init.d/kms-server
-/etc/init.d/kms-server enable
+sh /etc/init.d/kms-server enable
 
 echo "py-kms installed as a process that starts on boot"
 echo "py-kms should autodetect the LAN bridge IP address automatically"
