@@ -3,7 +3,7 @@
 # Run as root
 
 cp ./resources/kms-server /etc/init.d/kms-server
-chmod +x /etc/init.d/kms-server
+chmod 755 /etc/init.d/kms-server
 sh /etc/init.d/kms-server enable
 
 echo "py-kms installed as a process that starts on boot"

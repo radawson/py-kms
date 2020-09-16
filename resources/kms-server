@@ -2,8 +2,7 @@
 # Script to start py-kms automatically on OpenWRT
 # Ensure you cloned py-kms into ~/ or change the path
 
-START=20
-STOP=30
+START=90
 
 start()	{
 	sleep 5 # ensure the boot process is complete
@@ -20,9 +19,4 @@ stop()	{
 	kill $PID
 	sleep 2
 	echo "Python KMS server (PID"$PID") stopped"
-}
-
-restart()	{
-	stop
-	start
 }
