@@ -1,6 +1,6 @@
 #!/bin/sh /etc/rc.common
 # Script to start py-kms automatically on OpenWRT
-# Ensure you cloned py-kms into ~/ or change the path
+# Ensure you cloned py-kms into /root (~ as the root user)
 
 START=77
 
